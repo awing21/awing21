@@ -1,8 +1,13 @@
 name: Cosign installer
-on:
+on: [push]
 jobs:
-  runs-on: ubuntu-latest
-  name: Install Cosign and test presence in path
+  test_cosign_action:
+    runs-on: ubuntu-latest
+
+    permissions:
+      actions: none
+
+    name: Install Cosign and test presence in path
     steps:
       - name: Install Cosign
         uses: sigstore/cosign-installer@main
