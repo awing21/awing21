@@ -1,7 +1,10 @@
 name: Cosign installer
-on: [push]
+on:
 jobs:
   runs-on: ubuntu-latest
-    uses: sigstore/cosign-installer@main
-    with:
-      cosign-release: 'v1.6.0' # optional
+  name: Install Cosign and test presence in path
+    steps:
+      - name: Install Cosign
+        uses: sigstore/cosign-installer@main
+      - name: Check install!
+        run: cosign version
