@@ -1,3 +1,0 @@
-uses: sigstore/cosign-installer@main
-with:
-  cosign-release: 'v1.6.0' # optional
